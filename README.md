@@ -14,7 +14,7 @@ Retours :
 ## Méthodes utiles pour le parcouts d'automates 
 Dans le fichier `useful_methods.py`, j'ai codé des méthodes afin de faciliter le parcours des automates et d'éviter de devoir faire ces recherches manuellement.
 
-La méthode `path_between_two_states` permet de trouver le chemin entre deux états d'un automate.
+La méthode `path_between_two_states` permet de trouver le chemin entre deux états d'un automate.\
 Arguments :
 -
 Retours : 

@@ -18,7 +18,7 @@ La méthode `path_between_two_states` permet de trouver le chemin entre deux ét
 Arguments : 
 - automaton_path : chemin d'accès et le nom d'un automate en format dot 
 - beginning : le nom du premier état, début du chemin (str)
-- end : le nom du second état, fin du chemin (str)
+- end : le nom du second état, fin du chemin (str)\
 Retours :
 - Une liste de charatères le l'alphabet entré lors de l'apprentissage correspondant au un chemin allant du premier au second état
 
@@ -26,7 +26,7 @@ La méthode `result_of_path` permet de trouver l'état d'arrivée apres une séq
 Arguments : 
 - automaton_path : chemin d'accès et le nom d'un automate en format dot
 - path : liste correspondant à la séquence de charactères à effectuer
-- input_al : alphabet utilisé lors de l'apprentissage, par défaut cet alphabet est ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']
+- input_al : alphabet utilisé lors de l'apprentissage, par défaut cet alphabet est ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']\
 Retours :
 - le nom de l'état d'arrivée 
 
@@ -38,7 +38,7 @@ La méthode `find_different_sequence_for_similar_states` permet de comparer deux
 Arguments :
 - list_of_similar_states : liste d'états similaires que l'on souhaite comparer deux à deux
 - automaton_path : chemin d'accès et le nom d'un automate en format dot
-- learned_automata : automate renvoyé par la méthode `run_leaning_for_vim`
+- learned_automata : automate renvoyé par la méthode `run_leaning_for_vim`\
 Affichage pour chaque paire d'états :
 - une liste d'entrées qui différencie les deux états
 - une liste de caractères de l'alphabet entré lors de l'apprentissage permettant de mettre vim dans chacun des états
@@ -49,7 +49,7 @@ Arguments :
 - automaton_path_1 : chemin d'accès et le nom du premier automate en format dot
 - learned_automata_2 : second automate renvoyé par la méthode `run_leaning_for_vim`
 - automaton_path_2 : chemin d'accès et le nom du second automate en format dot
-- max_seq_returned : nombre maximal de séquences renvoyées, la valeur par defaut est 10
+- max_seq_returned : nombre maximal de séquences renvoyées, la valeur par defaut est 10\
 Affichage pour chaque séquence de contre exemple :
 - la séquence de contre exemple
 - le nom de l'état d'arrivée avec le premier automate

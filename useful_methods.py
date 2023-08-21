@@ -1,18 +1,18 @@
 import pydot
 
 
-def path_between_two_states(graph_file, beginning, end):
-    graph = pydot.graph_from_dot_file(graph_file)[0]
+def path_between_two_states(automaton_path, beginning, end):
+    graph = pydot.graph_from_dot_file(automaton_path)[0]
     # fonctionne pas forcement si beginnig différent de s0
     if beginning == end:
         return []
     for edge in graph.get_edges():
         if edge.get_destination() == end:
-            return path_between_two_states(graph_file, beginning, edge.get_source()) + [edge.get_label()]
+            return path_between_two_states(automaton_path, beginning, edge.get_source()) + [edge.get_label()]
 
 
-def result_of_path(automaton_file, path, input_al = ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']):
-    graph = pydot.graph_from_dot_file(automaton_file)[0]
+def result_of_path(automaton_path, path, input_al = ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']):
+    graph = pydot.graph_from_dot_file(automaton_path)[0]
     source = 's0'
     for character in path :
         i = int(source[1:]) * len(input_al)

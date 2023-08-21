@@ -39,6 +39,7 @@ Arguments :
 - list_of_similar_states : liste d'états similaires que l'on souhaite comparer deux à deux
 - automaton_path : chemin d'accès et le nom d'un automate en format dot
 - learned_automata : automate renvoyé par la méthode `run_leaning_for_vim`\
+
 Affichage pour chaque paire d'états :
 - une liste d'entrées qui différencie les deux états
 - une liste de caractères de l'alphabet entré lors de l'apprentissage permettant de mettre vim dans chacun des états
@@ -50,6 +51,7 @@ Arguments :
 - learned_automata_2 : second automate renvoyé par la méthode `run_leaning_for_vim`
 - automaton_path_2 : chemin d'accès et le nom du second automate en format dot
 - max_seq_returned : nombre maximal de séquences renvoyées, la valeur par defaut est 10\
+
 Affichage pour chaque séquence de contre exemple :
 - la séquence de contre exemple
 - le nom de l'état d'arrivée avec le premier automate

@@ -158,7 +158,7 @@ class NvimSUL(SUL):
 
 
 
-def run_leaning_for_vim(learning_algotithm, input_al=['i', 'w', '<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>'], WPS = 300, WL = 10):
+def run_leaning_for_vim(learning_algotithm, input_al=['i', 'w', '<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>'], WPS = 150, WL = 10):
     # NOTE: Merging 'g' and 'r' into 'gr' changes the learning time drastically. (> 200 seconds)
     assert learning_algotithm == 'KV' or learning_algotithm == 'L_star'
     sul = NvimSUL()

@@ -178,5 +178,5 @@ def run_leaning_for_vim(learning_algotithm, input_al=['i', 'w', '<C-c>', '<C-g>'
     return learned_moore
 
 
-learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV')
-learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV', input_al= ['i', 'w', '<C-c>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>', '<C-q>'])
+# learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV')
+# learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV', input_al= ['i', 'w', '<C-c>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>', '<C-q>'])

@@ -15,12 +15,20 @@ Retours :
 Dans le fichier `useful_methods.py`, j'ai codé des méthodes afin de faciliter le parcours des automates et d'éviter de devoir faire ces recherches manuellement.
 
 La méthode `path_between_two_states` permet de trouver le chemin entre deux états d'un automate.\
-Arguments :
--
-Retours : 
+Arguments : 
+- automaton_path : chemin d'accès et le nom d'un automate en format dot 
+- beginning : le nom du premier état, début du chemin (str)
+- end : le nom du second état, fin du chemin (str)
+Retours :
+- Une liste de charatères le l'alphabet entré lors de l'apprentissage correspondant au un chemin allant du premier au second état
 
-
-result_of_path
+La méthode `result_of_path` permet de trouver l'état d'arrivée apres une séquence de charactères dans l'automate.\
+Arguments : 
+- automaton_path : chemin d'accès et le nom d'un automate en format dot
+- path : liste correspondant à la séquence de charactères à effectuer
+- input_al : alphabet utilisé lors de l'apprentissage, par défaut cet alphabet est ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']
+Retours :
+- le nom de l'état d'arrivée 
 
 
 ## `vim_automata_analysis.py`

@@ -119,11 +119,6 @@ class NvimSUL(SUL):
     def mode(self):
         return self.n.api.get_mode()
 
-    def reset_buf(self):
-        curbuf = self.n.api.get_current_buf()
-        self.n.api.command("enew")
-        self.n.api.buf_delete(curbuf, {"force": True, "unload": True})
-
     def feed(self, keys):
         return self.n.input(keys)
 
@@ -139,7 +134,6 @@ class NvimSUL(SUL):
         if mode["mode"] == "t":
             self.feed("<C-\\><C-N>")
         elif mode["mode"] == "nt":
-            #self.reset_buf()
             print("Resetting session (from nt):", mode)
             self.reset()
         else:

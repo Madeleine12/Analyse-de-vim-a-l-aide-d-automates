@@ -26,7 +26,7 @@ La méthode `result_of_path` permet de trouver l'état d'arrivée apres une séq
 Arguments : 
 - automaton_path : chemin d'accès et le nom d'un automate en format dot
 - path : liste correspondant à la séquence de charactères à effectuer
-- input_al : alphabet utilisé lors de l'apprentissage, par défaut cet alphabet est ['i', 'w','<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']\
+- input_al : alphabet utilisé lors de l'apprentissage, par défaut cet alphabet est ['i', 'w','`<C-c>`', '`<C-g>`', '`<C-v>`', 'c', ':', 'v', 'g', 'h', '`<C-o>`', 'r', '`<Esc>`', '`<CR>`']\
 Retours :
 - le nom de l'état d'arrivée 
 

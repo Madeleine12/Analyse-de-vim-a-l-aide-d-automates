@@ -57,4 +57,6 @@ Affichage pour chaque séquence de contre exemple :
 - le nom de l'état d'arrivée avec le premier automate
 - le nom de l'état d'arrivée avec le second automate
 
+## Changement de format des automates 
+Le fichier 
 

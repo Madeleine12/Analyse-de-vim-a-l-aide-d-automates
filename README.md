@@ -58,5 +58,4 @@ Affichage pour chaque séquence de contre exemple :
 - le nom de l'état d'arrivée avec le second automate
 
 ## Changement de format des automates 
-Le fichier 
-
+Le fichier `decorate-graph.py` permet de changer le format des automates de dot à xdot afin de les présenter de manière plus lisible.

@@ -12,7 +12,7 @@ Arguments :
 - WL : walk len valeur par défaut 10
 
 
-Retours :\
+Retours :
 - Automate obtenu au terme de l'apprentissage (il est également enregistré dans le dosier dans lequel se trouve le fichier python sous format dot)
 
 ## Méthodes utiles pour le parcouts d'automates 

@@ -11,7 +11,7 @@ Arguments :
 
 
 Retours :
--Automate obtenu au terme de l'apprentissage (il est également enregistré dans le dosier dans lequel se trouve le fichier python sous format dot)
+- Automate obtenu au terme de l'apprentissage (il est également enregistré dans le dosier dans lequel se trouve le fichier python sous format dot)
 
 ## Méthodes utiles pour le parcouts d'automates 
 Dans le fichier `useful_methods.py`, j'ai codé des méthodes afin de faciliter le parcours des automates et d'éviter de devoir faire ces recherches manuellement.

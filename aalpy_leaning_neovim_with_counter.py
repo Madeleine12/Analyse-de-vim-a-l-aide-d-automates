@@ -164,39 +164,26 @@ class NvimSUL(SUL):
         return next_mode
 
 
-sul = NvimSUL()
 
-input_al = ['i', 'w']#, #, #'<C-\\><C-N>', 'term<CR>', '/$', 
-            #'<C-c>', '<C-g>', '<C-v>']#, 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>']
-# NOTE: Merging 'g' and 'r' into 'gr' changes the learning time drastically. (> 200 seconds)
-# DEBUG alphabet
-#input_al = [':', 'i', 'c', '<C-o>', '<CR>']
+def run_leaning_for_vim(learning_algotithm, input_al=['i', 'w', '<C-c>', '<C-g>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>'], WPS = 150, WL = 10):
+    # NOTE: Merging 'g' and 'r' into 'gr' changes the learning time drastically. (> 200 seconds)
+    assert learning_algotithm == 'KV' or learning_algotithm == 'L_star'
+    sul = NvimSUL()
+    state_origin_eq_oracle = StatePrefixEqOracle(
+        input_al, sul, walks_per_state=WPS, walk_len=WL)
+    if learning_algotithm == 'L_star' :
+        print('Lstar')
+        learned_moore = run_Lstar(input_al, sul, state_origin_eq_oracle, cex_processing='rs',
+                                closing_strategy='single', automaton_type='moore', cache_and_non_det_check=True, print_level=2)
+    
+    # Aalpy author recommends KV over Lstar: https://github.com/DES-Lab/AALpy/issues/43#issuecomment-1441909285 
+    elif learning_algotithm == 'KV' :
+        print('KV')
+        learned_moore = run_KV(input_al, sul, state_origin_eq_oracle, cex_processing='rs',
+                                automaton_type='moore', cache_and_non_det_check=True, print_level=3)
+    save_automaton_to_file(learned_moore, path='nvim' + '_' + learning_algotithm + '_' + str(WPS) + '_' + str(WL), file_type='dot')
+    return learned_moore
 
-# state_origin_eq_oracle = StatePrefixEqOracle(
-#     input_al, sul, walks_per_state=250, walk_len=40)
-# #Aalpy author recommends KV over Lstar: https://github.com/DES-Lab/AALpy/issues/43#issuecomment-1441909285 
-# print('Lstar')
-# learned_moore_Lstar = run_Lstar(input_al, sul, state_origin_eq_oracle, cex_processing='rs',
-#                          closing_strategy='single', automaton_type='moore', cache_and_non_det_check=True, print_level=2)
 
-# save_automaton_to_file(learned_moore_Lstar, path='nvim-Lstar-100walks-15len', file_type='dot')
-
-# I am performing these two assigments to start with a clean "state" (or else I hit a bug)
-sul = NvimSUL()
-state_origin_eq_oracle = StatePrefixEqOracle(
-    input_al, sul, walks_per_state=250, walk_len=10)
-print('KV')
-learned_moore_KV = run_KV(input_al, sul, state_origin_eq_oracle, cex_processing='rs',
-                          automaton_type='moore', cache_and_non_det_check=True, print_level=3)
-
-save_automaton_to_file(learned_moore_KV, path='nvim-KV-250-40len', file_type='dot')
-
-# print('Comparing results for s98 and s0')
-# s98 = learned_moore_Lstar.get_state_by_id('s98')
-# s0 = learned_moore_Lstar.get_state_by_id('s0')
-# dist_seq = learned_moore_Lstar.find_distinguishing_seq(s0, s98)
-# print(dist_seq)
-
-# print('Comparing results')
-# cexes = compare_automata( learned_moore_Lstar, learned_moore_KV, num_cex=10)
-# print(cexes)
+# learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV')
+# learned_automata_KV = run_leaning_for_vim(learning_algotithm='KV', input_al= ['i', 'w', '<C-c>', '<C-v>', 'c', ':', 'v', 'g', 'h', '<C-o>', 'r', '<Esc>', '<CR>', '<C-q>'])

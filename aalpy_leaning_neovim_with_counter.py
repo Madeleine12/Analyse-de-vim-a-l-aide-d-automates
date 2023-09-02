@@ -123,9 +123,6 @@ class NvimSUL(SUL):
         return self.n.input(keys)
 
     def post(self):
-        #self.reset()
-        # DEBUG print
-        #print(">>>")
         mode = self.mode()
 
         if mode["blocking"]:
@@ -146,8 +143,6 @@ class NvimSUL(SUL):
         self.n.api.command("let @/=''") # set the search register to '' or else `:v` has different effect
 
         if self.mode()["mode"] != "n":
-            # DEBUG print
-            #print("Resetting session:", mode)
             self.reset()
 
     def step(self, letter):        

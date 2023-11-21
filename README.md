@@ -28,7 +28,7 @@ Arguments :
 
 
 Retours :
-- Une liste de charatères le l'alphabet entré lors de l'apprentissage correspondant au un chemin allant du premier au second état
+- Une liste de caratères le l'alphabet entré lors de l'apprentissage correspondant au un chemin allant du premier au second état
 
 La méthode `result_of_path` permet de trouver l'état d'arrivée apres une séquence de charactères dans l'automate.
 
